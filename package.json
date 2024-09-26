@@ -1,0 +1,31 @@
+{
+  "name": "express-prisma-multi-schema",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "dev": "nodemon src/index.ts",
+    "start": "npx ts-node src/index.ts",
+    "prisma:generate:common": "prisma generate --schema=./prisma/common/schema.prisma",
+    "prisma:makemigrations:common": "prisma migrate dev --create-only --schema=./prisma/common/schema.prisma",
+    "prisma:generate:management": "prisma generate --schema=./prisma/management/schema.prisma",
+    "prisma:makemigrations:management": "prisma migrate dev --schema=./prisma/management/schema.prisma",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.2",
+    "prisma": "^5.20.0",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.20.0",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "ts-node": "^10.9.2"
+  }
+}
